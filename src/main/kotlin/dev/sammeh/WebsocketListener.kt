@@ -8,7 +8,7 @@ import io.smallrye.mutiny.uni
 @WebSocket(path = "/websocket")
 class WebsocketListener {
     data class Pointer(val x: Double, val y: Double, val z: Double)
-    @OnTextMessage(broadcast = true)
+    @OnTextMessage
     fun onMessage(pointer: List<Double>) : Uni<List<Double>>{
         return uni { pointer }
     }
